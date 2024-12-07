@@ -23,10 +23,11 @@ public class MoveObject : MonoBehaviour
 
     void OnMouseDown()
     {   
+        float radius = 1.5f;
         float angle = Mathf.Deg2Rad * Random.Range(0,365);
-        float x = Mathf.Cos(angle);
+        float x = radius * Mathf.Cos(angle);
         float y = Random.Range(-0.5f, 0.5f);
-        float z = Mathf.Sin(angle);
+        float z = radius * Mathf.Sin(angle);
         Cube.transform.position = new Vector3(x, y, z);
         testText.text = $"angle: {angle} cos: {x} sin: {z} y: {y}";
     }
